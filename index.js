@@ -29,8 +29,11 @@ var chancellorVotes = {};
 var gameStarted = false;
 var gameEnded = false;
 
-server.listen(8080, function(){
+server.set('port', (process.env.PORT || 8080));
+
+server.listen(app.get('port'), function(){
   //console.log("Server is now running...");
+  console.log('Node app is running on port', app.get('port'));
 });
 
 
